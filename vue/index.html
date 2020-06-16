@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Проверка возраста</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+	</head>
+	<body>
+		<section id="app">
+			<h1 id="message" v-bind:class="[ status ? 'open' : 'close']">{{ result }}</h1>
+			<input type="number" name="age" placeholder="Ваш возраст" id="age" v-model="age">
+			<button type="submit" id="button-check" v-on:click="checkAge">Проверить</button>
+			<div v-show="hide" id="hide-param">
+				<label>Есть сопровождающий? <input type="checkbox" name="accompanied" id="accompanied" @change="check" v-model="checks"></label>
+			</div>
+		</section>
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>
