@@ -1,12 +1,12 @@
-$(document).on('click', '#button-check', function(){
-	let age = $('#age').val();
-	let out = $('#message');
-	let secondParam = $('#hide-param');
-	$('#accompanied').prop('checked', false);
+$(document).on('click', '#button-check', function(){			//Событие нажатие на кнопку
+	let age = $('#age').val();							//Получение значения по id
+	let out = $('#message');							//Получение блока по id для вывода сообщения
+	let secondParam = $('#hide-param');					//Получение блока со скрытым параметром	
+	$('#accompanied').prop('checked', false);			//Изменение параметров чекбокса на false(Обнуление чекбокса)
 	if(age < 18){
-		secondParam.css({'display':'block'});
-		out.css({'color':'#f00'});
-		out.html('Вы младше 18 лет, доступ закрыт');
+		secondParam.css({'display':'block'});			//Показ скротого блока
+		out.css({'color':'#f00'});						//изменение цвета
+		out.html('Вы младше 18 лет, доступ закрыт');	//Запись сообщения 
 		$(document).on('change', '#accompanied', function(){
 			if($('#accompanied').prop('checked')){
 				out.css({'color':'#26ff00'});
